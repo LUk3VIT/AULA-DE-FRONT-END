@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Meu Site</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            header{
+                background-color: rgba(0, 255, 255, 0.616);
+                color: #FFF;
+            }
+
+            nav ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul li {
+                display: inline;
+                margin-right: 10px;
+            }
+
+            nav ul li a {
+                color: #FFF;
+                text-decoration: none;
+            }
+
+            section{
+                padding: 20px;
+            }
+
+            section h2{
+                margin-bottom: 10px;
+            }
+            
+            footer{
+                background-color: black;
+                color: #FFF;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .destaque{
+                background-color: blueviolet;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Meu site</h1>  
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">SOBRE</a></li>
+                    <li><a href="#services">SERVIÇOS</a></li>
+                    <li><a href="#contac">CONTATOS  </a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="home">
+            <h2>Bem-vindo ao meu site</h2>
+            <p>Este é um site de exemplo criado com HTML</p>
+
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Internet Explores"></option>
+                <option value="FireFox"></option>
+                <option value="Chrome"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+                <option value="Edge"></option>
+            </datalist>
+        </section>
+        <section id="services" class="destaque">
+            <h2>Serviços</h2>
+            <p>Este é um site Ficticio</p>
+            <ul>
+                <li>web design</li>
+                <li>Desenvolviment web</li>
+                <li>hospedagem de sites</li>
+        </section>
+        <section id="about">
+            <h2>Sobre</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quae ex fugiat nulla illo dolores, eos, accusantium sint recusandae laborum at corporis dignissimos incidunt laboriosam deleniti neque quam blanditiis tenetur.</p>
+        </section>
+        <section id="contact">
+            <h2>Contato</h2>
+            <p>entre em contato</p>
+            <form id="contactForm" action="/submit_form" method="post">
+                <label for="name">Nome:</label>
+                <input type="text" name="name" id="name">
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email">
+
+                <label for="message">Mensagem:</label>
+                <textarea name="message" id="message" cols="10" rows="10">
+
+                </textarea><br>
+                <input type="submit" onclick="validaForm(event)" value="Enviar">
+            </form>
+        </section>
+        <footer>
+            <p>&copy;Site Do Lucas 2004</p>
+        </footer>
+        <script type="text/javascript">
+            function validaForm(event){
+                event.preventDefault();
+                
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var mensagem = document.getElementById('message').value;
+                
+                console.log(name)
+
+                if (name == '' || email == '' || message == ''){
+                    alert('Por favor, preencha todos os campos. ');
+                    return;
+                }
+                
+                document.getElementById("contactForm").submit();
+
+            }
+        </script>
+    </body>
+</html>
